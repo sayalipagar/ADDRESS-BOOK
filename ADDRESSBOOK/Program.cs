@@ -5,14 +5,14 @@
         static void Main(string[] args)
         {
             bool flag = true;
-            while(flag)
+            AddressBook addressBook = new AddressBook();
+            while (flag)
             {
-                Console.WriteLine("\nselect Program\n 1.AddContacts");
+                Console.WriteLine("\nselect Program\n 1.AddContacts\n 2.EditContacts");
                 int option = Convert.ToInt32(Console.ReadLine());
-                switch(option)
+                switch (option)
                 {
                     case 1:
-                        AddressBook addressBook = new AddressBook();
                         Contact contact = new Contact();
                         {
                             Console.WriteLine("Enter FirstName");
@@ -26,26 +26,24 @@
                             Console.WriteLine("Enter State");
                             contact.State = Console.ReadLine();
                             Console.WriteLine("Enter Zip Code");
-                            contact.Zip =Convert.ToInt32 (Console.ReadLine());
+                            contact.Zip = Convert.ToInt32(Console.ReadLine());
                             Console.WriteLine("Enter PhoneNo");
                             contact.PhoneNo = Console.ReadLine();
                             Console.WriteLine("Enter Email");
                             contact.Email = Console.ReadLine();
                         }
-                        Console.WriteLine(contact.FirstName + "\n" + contact.LastName + "\n" + contact.Address + "\n" + contact.City + "\n" + contact.State + "\n" + contact.Zip + "\n" + contact.PhoneNo + "\n" + contact.Email);
+                        Console.WriteLine("......Print Added Contacts......");
                         addressBook.AddContact(contact);
                         break;
-
-
+                    case 2:
+                        string FirstName = Console.ReadLine();
+                        addressBook.EditContact(FirstName);
+                    break;
                     default:
                         Console.WriteLine("Invalid choice");
                         break;
                 }
-
-
             }
-          
-           
         }
     }
 }
