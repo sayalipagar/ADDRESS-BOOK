@@ -8,7 +8,7 @@
             AddressBook addressBook = new AddressBook();
             while (flag)
             {
-                Console.WriteLine("\nselect Program\n 1.AddContacts\n 2.DeleteContact");
+                Console.WriteLine("\nselect Program\n 1.AddContacts\n 2.EditContact\n 3.DeleteContact");
                 int option = Convert.ToInt32(Console.ReadLine());
                 switch (option)
                 {
@@ -35,11 +35,11 @@
                         Console.WriteLine("......Print Added Contacts......");
                         addressBook.AddContact(contact);
                         break;
-                     //case 2:
-                     //     string FirstName = Console.ReadLine();
-                     //     addressBook.EditContact(FirstName);
-                     // break;
                     case 2:
+                        string FirstName = Console.ReadLine();
+                        addressBook.EditContact(FirstName);
+                        break;
+                    case 3:
                         Console.WriteLine("Enter first name");
                         string firstName = Console.ReadLine();
                         Console.WriteLine("Display After Deleting contacts");
